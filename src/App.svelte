@@ -1,10 +1,11 @@
 <script>
 	import Hero from './components/Hero.svelte'
-
-	let primaryColor = '#0000FF'
+	import { primaryColor } from './stores.js'
+	import { onDestroy } from 'svelte'
+	let primaryColor = '#845ec2'
 	const generatePalettes = (newColor) => {
 		alert('hello from the dispatched function')
-		color = newColor
+		primaryColor = newColor
 	}
 </script>
 

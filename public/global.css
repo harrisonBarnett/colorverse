@@ -11,3 +11,12 @@ ul, li, a, button {
 	border: 0;
 	outline: 0;
 }
+
+:root {
+	--color-purple: #845ec2;
+	--color-blue: #00a1ba;
+	--color-green: #31c488;
+	--color-teal: #00c9b7;
+
+	--primary-gradient: linear-gradient(225deg, var(--color-green), var(--color-blue), var(--color-purple));
+}

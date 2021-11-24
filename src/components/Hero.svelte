@@ -1,10 +1,12 @@
 <script>
     import { createEventDispatcher } from 'svelte'
     const dispatch = createEventDispatcher()
-    function handlePaletteClick() {
+    function handlePaletteClick(mainColor) {
         dispatch('handlePaletteClick')
     }
-
+    function handleInputChange(e) {
+        mainColor = e.target.value
+    }
     export let mainColor
 </script> 
 
@@ -21,16 +23,26 @@
             <img id='navbar-twitter-logo' src='...' alt='The twitter logo'/>
         </ul>
     </nav>
-    <button 
-        on:click={handlePaletteClick}
-        style='background: {mainColor}'>generate a palette</button>
+    <div id='input-group'>
+        <input 
+        id='color-input'
+        value={mainColor}
+        style='background: {mainColor}'
+        on:change={handleInputChange}/>
+        <button 
+            id='generate-btn'
+            on:click={handlePaletteClick}>
+            generate
+        </button>
+    </div>
+
 </main>
 
 <style>
     main {
         height: 100vh;
         width: 100vw;
-        background: seagreen;
+        background-image: var(--primary-gradient);
     }
     nav {
         border: 1px solid red;
@@ -55,6 +67,32 @@
         align-items: center;
         justify-content: center;
         gap: 2vmax;
+    }
+    #input-group {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+    #color-input,
+    #generate-btn {
+        padding: 1em;
+        box-sizing: border-box;
+        width: 20vmax;
+        outline: none;
+        border: none;
+        border-radius: 12vmax;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    #generate-btn {
+        text-transform: uppercase;
+        color: white;
+        background: var(--color-teal);
     }
 
 </style>
