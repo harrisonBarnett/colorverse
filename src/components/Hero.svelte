@@ -1,13 +1,10 @@
 <script>
-    import { createEventDispatcher } from 'svelte'
-    const dispatch = createEventDispatcher()
-    function handlePaletteClick(mainColor) {
-        dispatch('handlePaletteClick')
-    }
+    import { primaryColor } from '../stores.js'
+
     function handleInputChange(e) {
-        mainColor = e.target.value
+        $primaryColor = e.target.value
     }
-    export let mainColor
+    export let handlePaletteClick = ()=> {}
 </script> 
 
 <main id='hero-container'>
@@ -26,12 +23,12 @@
     <div id='input-group'>
         <input 
         id='color-input'
-        value={mainColor}
-        style='background: {mainColor}'
+        value={$primaryColor}
+        style='background: {$primaryColor}'
         on:change={handleInputChange}/>
         <button 
             id='generate-btn'
-            on:click={handlePaletteClick}>
+            on:click={handlePaletteClick()}>
             generate
         </button>
     </div>
