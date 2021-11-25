@@ -10,7 +10,7 @@
 <main id='hero-container'>
     <nav>
         <img id='navbar-logo' src='./static/images/color-space-logo.png' alt='The colorspace logo'/>
-        <p id='navbar-styled-text'>ColorSpace</p>
+        <h1 id='navbar-styled-text'>ColorSpace</h1>
         <ul>
             <li>Palettes</li>
             <li>Gradient</li>
@@ -21,6 +21,9 @@
         </ul>
     </nav>
     <div id='input-group'>
+        <p id='title-1'>Never waste Hours on finding the perfect Color Palette again!</p>
+        <p id='title-2'>JUST ENTER A COLOR!</p>
+        <p id='title-3'>And Generate nice Color Palettes</p>
         <input 
         id='color-input'
         value={$primaryColor}
@@ -72,20 +75,28 @@
         transform: translate(-50%, -50%);
         display: flex;
         flex-direction: column;
-        gap: 1em;
+        align-items: center;
+        gap: .5em;
+        font-size: 3vmax;
+        font-weight: 700;
+        text-align: center;
+    }
+    #title-3 {
+        font-size: 2vmax;
+        font-weight: 400;
     }
     #color-input,
     #generate-btn {
-        padding: 1em;
+        padding: 1.2em;
         box-sizing: border-box;
-        width: 20vmax;
+        width: 12vmax;
+        min-width: 200px;
         outline: none;
         border: none;
         border-radius: 12vmax;
         text-transform: uppercase;
         text-align: center;
     }
-
     #generate-btn {
         text-transform: uppercase;
         color: white;
