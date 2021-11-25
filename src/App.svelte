@@ -9,7 +9,8 @@
 </script>
 
 <main>
-	<Hero handlePaletteClick={()=>generatePalettes}/>
+	<Hero 
+	handlePaletteClick={()=>generatePalettes}/>
 	<Palettes show={$showPalettes}/>
 </main>
 
