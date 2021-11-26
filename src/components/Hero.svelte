@@ -1,10 +1,7 @@
 <script>
     import { primaryColor } from '../stores.js'
 
-    function handleInputChange(e) {
-        $primaryColor = e.target.value
-    }
-    export let handlePaletteClick = ()=> {}
+    export let handleShowPalettes = ()=> {}
 </script> 
 
 <main id='hero-container'>
@@ -26,12 +23,11 @@
         <p id='title-3'>And Generate nice Color Palettes</p>
         <input 
         id='color-input'
-        value={$primaryColor}
-        style='background: {$primaryColor}'
-        on:change={handleInputChange}/>
+        bind:value={$primaryColor}
+        style='background: {$primaryColor}'/>
         <button 
             id='generate-btn'
-            on:click={handlePaletteClick()}>
+            on:click={handleShowPalettes()}>
             generate
         </button>
     </div>

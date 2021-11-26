@@ -3,15 +3,22 @@
 	import Hero from './components/Hero.svelte'
 	import Palettes from './components/Palettes.svelte'
 
-	function generatePalettes() {
+	function handleShowPalettes() {
 		$showPalettes = true
 	}
+
+	let paletteColor
+	primaryColor.subscribe(value => {
+		paletteColor = value
+	})
 </script>
 
 <main>
 	<Hero 
-	handlePaletteClick={()=>generatePalettes}/>
-	<Palettes show={$showPalettes}/>
+	handleShowPalettes={()=>handleShowPalettes}/>
+	<Palettes 
+	show={$showPalettes}
+	color={paletteColor}/>
 </main>
 
 <style>
