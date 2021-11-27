@@ -6,6 +6,9 @@
 </script> 
 
 <main id='hero-container'>
+    <!-- bg images -->
+    <img class='hero-bg-img'id='hero-bg-left' src='./static/images/astronaut-left.svg'alt='an astronaut floating above a planet'/>
+    <img class='hero-bg-img'id='hero-bg-right' src='./static/images/astronaut-right.svg' alt='an astronaut floating in space'/>
     <nav>
         <a href='#' id='nav-logo-group'>
             <img id='navbar-logo' src='./static/images/color-space-logo.png' alt='The colorspace logo'/>
@@ -40,9 +43,18 @@
 
 <style>
     main {
+        position: relative;
         height: 100vh;
         width: 100vw;   
         background-image: var(--primary-gradient);
+    }
+    .hero-bg-img {
+        position: absolute;
+        bottom: 0;
+        height: 75vh;
+    }
+    #hero-bg-right {
+        right: 40px;
     }
     nav {
         position: absolute;
