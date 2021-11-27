@@ -1,6 +1,4 @@
 <script>
-    import { primaryColor } from '../stores.js'
-    import tinycolor from 'tinycolor2'
     import ColorInput from './ColorInput.svelte'
 
     export let handleGenerateClick = ()=> {}
@@ -48,7 +46,7 @@
     .hero-bg-img {
         position: absolute;
         bottom: 0;
-        height: 75vh;
+        height: 65vh;
     }
     #hero-bg-right {
         right: 40px;
@@ -57,10 +55,8 @@
     nav {
         position: absolute;
         top: 40px;
-        left: 0;
-        right: 0;
-
-
+        left: 8%;
+        right: 8%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -71,25 +67,23 @@
         gap: 1em;
     }
     #navbar-logo {
-        height: 4vmax;
+        height: 2em;
         max-height: 40px;
-        margin-left: 10%;
     }
     #navbar-styled-text {
         font-size: 1em;
         color: white;
-        font-weight: 700;
+        font-weight: 900;
     }
     ul {
         margin-left: auto;
-        margin-right: 10%;
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 2vmax;
     }
     li {
-        font-size: .75em;
+        font-size: .7em;
         color: white;
         text-transform: uppercase;
     }
@@ -105,42 +99,46 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: .5em;
+        gap: 1em;
         font-weight: 700;
         text-align: center;
     }
     #title-1, #title-2 {
         font-size: 35px;
-        font-weight: 700;
+        font-weight: 900;
         color: white;
         text-shadow: 3px 3px 0 #898999;
+    }
+    #title-2 {
+        font-size: 40px;
     }
     #title-3 {
         font-size: 20px;
         font-weight: 200;
         color: white;
     }
-    input, button {
+    button {
         font-size: 16px;
-        font-weight: 200;
-    }
-    input {
-        background: black;
+        font-weight: 300;
     }
     #generate-btn {
         box-sizing: border-box;
-        width: 250px;
+        width: 180px;
         height: 50px;
+        color: white;
+        text-transform: uppercase;
+        text-align: center;
         outline: none;
         border: none;
         border-radius: 12vmax;
-        text-transform: uppercase;
-        text-align: center;
-    }
-    #generate-btn {
-        text-transform: uppercase;
-        color: white;
         background: var(--color-teal);
+        box-shadow: 6px 8px 10px rgba(0,0,0,.2);
+        transition: all 500ms ease;
+    }
+    #generate-btn:hover {
+        cursor: pointer;
+        box-shadow: none;
+        transition: all 500ms ease;
     }
 
 </style>

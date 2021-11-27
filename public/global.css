@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;700&display=swap');
-/* font-family: 'Work Sans', sans-serif */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* font-family: 'Montserrat', sans-serif */
 * {
-	font-family: 'Work Sans';
+	font-family: 'Montserrat';
 }
 html, body {
 	padding: 0;
@@ -36,10 +36,10 @@ ul, li, a, button {
 .lazy {
 	transform: scale(0);
 	opacity: 0;
-	transition: all 250ms ease;
+	transition: all 300ms ease;
 }
 .loaded {
 	transform: scale(1);
 	opacity: 1;
-	transition: all 250ms ease;
+	transition: all 300ms ease;
 }

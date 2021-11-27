@@ -14,13 +14,14 @@
 <style>
     input {
         box-sizing: border-box;
-        width: 250px;
+        width: 180px;
         height: 50px;
+        text-transform: uppercase;
+        text-align: center;
         outline: none;
         border: none;
         background: black;
         border-radius: 12vmax;
-        text-transform: uppercase;
-        text-align: center;
+        box-shadow: 6px 8px 10px rgba(0,0,0,.2);
     }
 </style>
