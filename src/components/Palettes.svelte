@@ -1,5 +1,6 @@
 <script>
     import tinycolor from 'tinycolor2'
+    import ColorInput from './ColorInput.svelte'
 
     export let show
     export let color
@@ -54,7 +55,8 @@
     ]
 </script>
 
-<main id='palette-zone'style='display: {show ? 'block' : 'none'}'>    
+<main id='palette-zone' style='display: {show ? 'flex' : 'none'}'>
+    <ColorInput className='palette-section-color-input'/>    
     {#each palettes as palette}
         <div class='palette-item lazy'>
             <p>{palette.name}</p>
@@ -68,14 +70,13 @@
             </div>
         </div>
     {/each}
-
+    <!-- intersection observer 'lazily loads' the palettes as they come into view -->
     <script>
         const palettes = document.querySelectorAll('.palette-item')
         let paletteObserver = new IntersectionObserver(function(entries, observer) {
             entries.forEach(entry => {
                 if(entry.isIntersecting) {
                     let lazyPalette = entry.target
-                    console.log(lazyPalette)
                     lazyPalette.classList.remove('lazy')
                     lazyPalette.classList.add('loaded')
                     paletteObserver.unobserve(lazyPalette)
@@ -94,7 +95,7 @@
         margin-top: 40px;
         height: 100%;
         width: 100%;
-        display: flex !important;
+        display: flex;
         flex-direction: column;
     }
     .palette-item {

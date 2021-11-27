@@ -1,11 +1,12 @@
 <script>
-	import { primaryColor, showPalettes } from './stores.js'
+	import { primaryColor } from './stores.js'
 	import Hero from './components/Hero.svelte'
 	import Palettes from './components/Palettes.svelte'
 	import Footer from './components/Footer.svelte'
 
+	let showPalettes = false
 	function handleShowPalettes() {
-		$showPalettes = true
+		showPalettes = true
 	}
 
 	let paletteColor
@@ -16,12 +17,12 @@
 
 <main>
 	<Hero 
-	handleShowPalettes={()=>handleShowPalettes}/>
+	handleGenerateClick={handleShowPalettes}/>
 	<Palettes 
-	show={$showPalettes}
+	show={showPalettes}
 	color={paletteColor}/>
 	<Footer
-	show={$showPalettes}
+	show={showPalettes}
 	/>
 </main>
 

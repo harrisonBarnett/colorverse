@@ -1,8 +1,9 @@
 <script>
     import { primaryColor } from '../stores.js'
     import tinycolor from 'tinycolor2'
+    import ColorInput from './ColorInput.svelte'
 
-    export let handleShowPalettes = ()=> {}
+    export let handleGenerateClick = ()=> {}
 </script> 
 
 <main id='hero-container'>
@@ -27,14 +28,10 @@
         <p id='title-1'>Never waste Hours on finding the perfect Color Palette again!</p>
         <p id='title-2'>JUST ENTER A COLOR!</p>
         <p id='title-3'>And Generate nice Color Palettes</p>
-        <input 
-        id='color-input'
-        bind:value={$primaryColor}
-        style='background: {$primaryColor}; color: {tinycolor($primaryColor).isLight() ? 'black' : 'white'};'
-        placeholder='#000000'/>
+        <ColorInput className='hero-color-input'/>
         <button 
             id='generate-btn'
-            on:click={handleShowPalettes()}>
+            on:click={() => handleGenerateClick()}>
             generate
         </button>
     </div>
@@ -130,7 +127,6 @@
     input {
         background: black;
     }
-    #color-input,
     #generate-btn {
         box-sizing: border-box;
         width: 250px;
