@@ -56,6 +56,7 @@
     #hero-bg-right {
         right: 40px;
     }
+    /* NAVBAR styles */
     nav {
         position: absolute;
         top: 40px;
@@ -98,6 +99,7 @@
     #navbar-twitter-logo {
         height: 1em;
     }
+    /* MAIN INPUTS styles */
     #input-group {
         position: absolute;
         left: 50%;
