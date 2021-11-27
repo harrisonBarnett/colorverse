@@ -28,6 +28,8 @@ ul, li, a, button {
 	--secondary-red: #f17179;
 	--secondary-purple: #3d438b;
 
+	--link-color: #35eaa9;
+
 
 	--primary-gradient: linear-gradient(225deg, var(--color-green), var(--color-blue), var(--color-purple));
 	--secondary-gradient: linear-gradient(225deg, var(--secondary-yellow), var(--secondary-red), var(--secondary-purple));

@@ -4,7 +4,7 @@
 	import Palettes from './components/Palettes.svelte'
 	import Footer from './components/Footer.svelte'
 
-	let showPalettes = false
+	let showPalettes = true
 	function handleShowPalettes() {
 		showPalettes = true
 	}

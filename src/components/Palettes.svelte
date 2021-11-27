@@ -143,8 +143,8 @@
     }
     .palette-item-hex {
         position: relative;
-        width: 90px;
-        height: 90px;
+        width: 100px;
+        height: 100px;
 
         border-radius: .5em;
         box-shadow: 1px 1px 2px rgba(0,0,0,.1);
