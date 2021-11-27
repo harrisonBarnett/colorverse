@@ -9,6 +9,24 @@
 
     export let show
     export let color
+
+
+    // TODO: IMPLIMENT AN INTERSECTION OBSERVER SUCH AS BELOW TO "LAZILY LOAD" THE PALETTES ON SCROLL
+    // const palettes = document.querySelectorAll('.palette-item')
+    // let paletteObserver = new IntersectionObserver(function(entries, observer) {
+    //     entires.forEach(entry => {
+    //         if(entry.isIntersecting) {
+    //             let lazyPalette = entry.target
+    //             lazyPalette.classList.remove('lazy')
+    //             lazyPalette.classList.add('loaded')
+    //             paletteObserver.unobserve(lazyPalette)
+    //         }
+    //     })
+    // })
+
+    // palettes.forEach(palette => {
+    //     paletteObserver.observe(palette)
+    // })
 </script>
 
 <main id='palette-zone'style='display: {show ? 'block' : 'none'}'>

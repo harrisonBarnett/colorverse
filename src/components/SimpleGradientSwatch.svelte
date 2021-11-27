@@ -4,7 +4,7 @@
     export let color
 </script>
 
-<div class='palette-item'>
+<div class='palette-item lazy'>
     <p>Simple Gradient</p>
     <div class='palette-item-group'>
         <div class='palette-item-hex' style='background: {tinycolor(color).spin(90).toHexString()}'>{tinycolor(color).spin(90).toHexString()}</div>
