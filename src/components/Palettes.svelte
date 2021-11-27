@@ -60,7 +60,8 @@
             <p>{palette.name}</p>
             <div class='palette-item-group'>
                 {#each palette.colors as newColor}
-                <div class='palette-item-hex' style='background: {newColor}'>
+                <div class='palette-item-pair'>
+                    <div class='palette-item-hex' style='background: {newColor}'></div>
                     <p>{newColor}</p>
                 </div>
                 {/each}
@@ -90,24 +91,27 @@
 
 <style>
     main {
+        margin-top: 40px;
         height: 100%;
         width: 100%;
-        display: flex;
+        display: flex !important;
         flex-direction: column;
-        gap: 200px;
     }
     .palette-item {
         position: relative;
         width: fit-content;
-        margin: 0 auto;
-        padding: 50px;
+        margin: 20px auto;
+        padding-bottom: 60px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
         text-align: center;
         font-weight: 700;
     }
     .palette-item:after {
         position: absolute;
-        bottom: -5%;
         left: 50%;
+        bottom: 0;
         content: '';
         height: 1px;
         width: 100%;
@@ -118,8 +122,19 @@
         display: none;
     }
     .palette-item p {
+        font-size: 1.4em;
         text-align: center;
         font-weight: 700;
+    }
+    .palette-item-pair p {
+        font-size: .9em;
+        font-weight: 200;
+        text-transform: uppercase;
+    }
+    .palette-item-pair {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
     .palette-item-group {
         display: flex;
@@ -127,20 +142,10 @@
     }
     .palette-item-hex {
         position: relative;
-        width: 100px;
-        height: 100px;
+        width: 90px;
+        height: 90px;
 
         border-radius: .5em;
         box-shadow: 1px 1px 2px rgba(0,0,0,.1);
     }
-    .palette-item-hex p {
-        position: absolute;
-        top: 125%;
-        left: 50%;
-        transform: translateX(-50%);
-        text-transform: uppercase;
-        font-weight: 200;
-    }
-
-
 </style>
