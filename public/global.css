@@ -24,7 +24,13 @@ ul, li, a, button {
 	--color-green: #31c488;
 	--color-teal: #00c9b7;
 
+	--secondary-yellow: #ffe767;
+	--secondary-red: #f17179;
+	--secondary-purple: #3d438b;
+
+
 	--primary-gradient: linear-gradient(225deg, var(--color-green), var(--color-blue), var(--color-purple));
+	--secondary-gradient: linear-gradient(225deg, var(--secondary-yellow), var(--secondary-red), var(--secondary-purple));
 }
 /* PALLETE 'lazy loading' transition */
 .lazy {
