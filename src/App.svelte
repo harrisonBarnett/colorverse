@@ -2,6 +2,7 @@
 	import { primaryColor, showPalettes } from './stores.js'
 	import Hero from './components/Hero.svelte'
 	import Palettes from './components/Palettes.svelte'
+	import Footer from './components/Footer.svelte'
 
 	function handleShowPalettes() {
 		$showPalettes = true
@@ -19,6 +20,9 @@
 	<Palettes 
 	show={$showPalettes}
 	color={paletteColor}/>
+	<Footer
+	show={$showPalettes}
+	/>
 </main>
 
 <style>

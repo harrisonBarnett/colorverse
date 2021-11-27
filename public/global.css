@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;700&display=swap');
+/* font-family: 'Work Sans', sans-serif */
 * {
-	font-family: Arial;
+	font-family: 'Work Sans';
 }
 html, body {
 	padding: 0;
