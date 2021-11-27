@@ -1,40 +1,91 @@
 <script>
-    // swatch templates
-    import SimpleGradientSwatch from './SimpleGradientSwatch.svelte'
-    import PalewaveSwatch from './PalewaveSwatch.svelte'
-    import DepthPaletteSwatch from './DepthPaletteSwatch.svelte'
-    import ComplimentarySwatch from './ComplimentarySwatch.svelte'
-    import WildcardSwatch from './WildcareSwatch.svelte'
     import tinycolor from 'tinycolor2'
 
     export let show
     export let color
 
-
-    // TODO: IMPLIMENT AN INTERSECTION OBSERVER SUCH AS BELOW TO "LAZILY LOAD" THE PALETTES ON SCROLL
-    // const palettes = document.querySelectorAll('.palette-item')
-    // let paletteObserver = new IntersectionObserver(function(entries, observer) {
-    //     entires.forEach(entry => {
-    //         if(entry.isIntersecting) {
-    //             let lazyPalette = entry.target
-    //             lazyPalette.classList.remove('lazy')
-    //             lazyPalette.classList.add('loaded')
-    //             paletteObserver.unobserve(lazyPalette)
-    //         }
-    //     })
-    // })
-
-    // palettes.forEach(palette => {
-    //     paletteObserver.observe(palette)
-    // })
+    const randomColor = tinycolor.random()
+    $: palettes =  [
+        {   name: 'Classic',
+            colors: [
+                tinycolor(color).spin(90).toHexString(),
+                tinycolor(color).spin(45).toHexString(),
+                color,
+                tinycolor(color).spin(135).toHexString(),
+                tinycolor(color).spin(180).toHexString()
+            ]
+        },
+        {   name: 'Palewave',
+            colors: [
+                tinycolor(color).spin(90).lighten(20).desaturate(10).toHexString(),
+                tinycolor(color).spin(45).lighten(20).desaturate(10).toHexString(),
+                color,
+                tinycolor(color).spin(135).lighten(20).desaturate(10).toHexString(),
+                tinycolor(color).spin(180).lighten(20).desaturate(10).toHexString()
+            ]
+        },
+        {   name: 'Depth',
+            colors: [
+                tinycolor(color).lighten(40),
+                tinycolor(color).lighten(20),
+                color,
+                tinycolor(color).darken(20),
+                tinycolor(color).darken(40)
+            ]
+        },
+        {   name: 'Complimentary',
+            colors: [
+                tinycolor(color).complement().spin(90).toHexString(),
+                tinycolor(color).complement().spin(45).toHexString(),
+                tinycolor(color).complement().toHexString(),
+                tinycolor(color).complement().spin(135).toHexString(),
+                tinycolor(color).complement().spin(180).toHexString()
+            ]
+        },
+        {   name: 'Wildcard',
+            colors: [
+               tinycolor.random().toHexString(),
+               tinycolor.random().toHexString(),
+               tinycolor.random().toHexString(),
+               tinycolor.random().toHexString(),
+               tinycolor.random().toHexString()
+            ]
+        },
+    ]
 </script>
 
-<main id='palette-zone'style='display: {show ? 'block' : 'none'}'>
-    <SimpleGradientSwatch color={color}/>
-    <PalewaveSwatch color={color}/>
-    <DepthPaletteSwatch color={color}/>
-    <ComplimentarySwatch color={color}/>
-    <WildcardSwatch color={tinycolor.random()} />
+<main id='palette-zone'style='display: {show ? 'block' : 'none'}'>    
+    {#each palettes as palette}
+        <div class='palette-item lazy'>
+            <p>{palette.name}</p>
+            <div class='palette-item-group'>
+                {#each palette.colors as newColor}
+                <div class='palette-item-hex' style='background: {newColor}'>
+                    <p>{newColor}</p>
+                </div>
+                {/each}
+            </div>
+        </div>
+    {/each}
+
+    <script>
+        const palettes = document.querySelectorAll('.palette-item')
+        let paletteObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    let lazyPalette = entry.target
+                    console.log(lazyPalette)
+                    lazyPalette.classList.remove('lazy')
+                    lazyPalette.classList.add('loaded')
+                    paletteObserver.unobserve(lazyPalette)
+                }
+            })
+        })
+
+        palettes.forEach(palette => {
+            paletteObserver.observe(palette)
+        })
+    </script>
 </main>
 
 <style>
@@ -43,26 +94,53 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-
+        gap: 200px;
     }
-    * :global(.palette-item) {
+    .palette-item {
+        position: relative;
         width: fit-content;
         margin: 0 auto;
         padding: 50px;
-    }
-    * :global(.palette-item p) {
         text-align: center;
         font-weight: 700;
     }
-    * :global(.palette-item-group) {
+    .palette-item:after {
+        position: absolute;
+        bottom: -5%;
+        left: 50%;
+        content: '';
+        height: 1px;
+        width: 100%;
+        transform: translateX(-50%);
+        background: rgba(0,0,0,.1);
+    }
+    #palette-zone .palette-item:last-of-type:after {
+        display: none;
+    }
+    .palette-item p {
+        text-align: center;
+        font-weight: 700;
+    }
+    .palette-item-group {
         display: flex;
         gap: .5em;
     }
-    * :global(.palette-item-hex) {
-        width: 120px;
-        height: 120px;
+    .palette-item-hex {
+        position: relative;
+        width: 100px;
+        height: 100px;
 
         border-radius: .5em;
         box-shadow: 1px 1px 2px rgba(0,0,0,.1);
     }
+    .palette-item-hex p {
+        position: absolute;
+        top: 125%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-transform: uppercase;
+        font-weight: 200;
+    }
+
+
 </style>

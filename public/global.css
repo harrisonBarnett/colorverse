@@ -26,3 +26,14 @@ ul, li, a, button {
 
 	--primary-gradient: linear-gradient(225deg, var(--color-green), var(--color-blue), var(--color-purple));
 }
+/* PALLETE 'lazy loading' transition */
+.lazy {
+	transform: scale(0);
+	opacity: 0;
+	transition: all 250ms ease;
+}
+.loaded {
+	transform: scale(1);
+	opacity: 1;
+	transition: all 250ms ease;
+}
