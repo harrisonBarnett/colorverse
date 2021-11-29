@@ -27,6 +27,7 @@
         position: relative;
         justify-content: space-around;
         background-image: var(--secondary-gradient);
+        background-attachment: fixed;
     }
     h1, h2, h3 {
         color: white;
@@ -50,6 +51,7 @@
     #img-container {
         position: relative;
         width: 33%;
+        min-width: 350px;
     }
     img {
         position: absolute;

@@ -1,5 +1,6 @@
 <script>
     import ColorInput from './ColorInput.svelte'
+    import NavBar from './NavBar.svelte'
 
     export let handleGenerateClick = ()=> {}
 </script> 
@@ -8,20 +9,7 @@
     <!-- bg images -->
     <img class='hero-bg-img'id='hero-bg-left' src='./static/images/astronaut-left.svg'alt='an astronaut floating above a planet'/>
     <img class='hero-bg-img'id='hero-bg-right' src='./static/images/astronaut-right.svg' alt='an astronaut floating in space'/>
-    <nav>
-        <a href='#' id='nav-logo-group'>
-            <img id='navbar-logo' src='./static/images/color-space-logo.png' alt='The colorspace logo'/>
-            <h1 id='navbar-styled-text'>ColorSpace</h1>
-        </a>
-        <ul>
-            <a href='#'><li>Palettes</li></a>
-            <a href='#'><li>Gradient</li></a>
-            <a href='#'><li>3-Color-Gradient</li></a>
-            <a href='#'><li>Contact</li></a>
-            <a href='#'><li>Info</li></a>
-            <a href='#'><img id='navbar-twitter-logo' src='./static/images/twitter-icon.svg' alt='The twitter logo'/></a>
-        </ul>
-    </nav>
+    <NavBar />
     <div id='input-group'>
         <p id='title-1'>Never waste Hours on finding the perfect Color Palette again!</p>
         <p id='title-2'>JUST ENTER A COLOR!</p>
@@ -42,6 +30,7 @@
         height: 100vh;
         width: 100vw;   
         background-image: var(--primary-gradient);
+        background-attachment: fixed;
     }
     .hero-bg-img {
         position: absolute;
@@ -50,45 +39,6 @@
     }
     #hero-bg-right {
         right: 40px;
-    }
-    /* NAVBAR styles */
-    nav {
-        position: absolute;
-        top: 40px;
-        left: 8%;
-        right: 8%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    #nav-logo-group {
-        display: flex;
-        align-items: center;
-        gap: 1em;
-    }
-    #navbar-logo {
-        height: 2em;
-        max-height: 40px;
-    }
-    #navbar-styled-text {
-        font-size: 1em;
-        color: white;
-        font-weight: 900;
-    }
-    ul {
-        margin-left: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 2vmax;
-    }
-    li {
-        font-size: .7em;
-        color: white;
-        text-transform: uppercase;
-    }
-    #navbar-twitter-logo {
-        height: 1em;
     }
     /* MAIN INPUTS styles */
     #input-group {
