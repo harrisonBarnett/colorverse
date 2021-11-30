@@ -2,22 +2,22 @@
 
 </script>
 
-<main>
-    <nav>
-        <a href='#' id='nav-logo-group'>
-            <img id='navbar-logo' src='./static/images/color-space-logo.png' alt='The colorspace logo'/>
-            <h1 id='navbar-styled-text'>ColorVerse</h1>
-        </a>
-        <ul>
-            <a href='#'><li id='current-page'>Palettes</li></a>
-            <a href='#'><li class='nav-link'>Gradient</li></a>
-            <a href='#'><li class='nav-link'>3-Color-Gradient</li></a>
-            <a href='#'><li class='nav-link'>Contact</li></a>
-            <a href='#'><li class='nav-link'>Info</li></a>
-            <a href='#'><img id='navbar-twitter-logo' src='./static/images/twitter-icon.svg' alt='The twitter logo'/></a>
-        </ul>
-    </nav>
-</main>
+
+<nav>
+    <a href='#' id='nav-logo-group'>
+        <img id='navbar-logo' src='./static/images/color-space-logo.png' alt='The colorspace logo'/>
+        <h1 id='navbar-styled-text'>ColorVerse</h1>
+    </a>
+    <ul>
+        <a href='#'><li id='current-page'>Palettes</li></a>
+        <a href='#'><li class='nav-link'>Gradient</li></a>
+        <a href='#'><li class='nav-link'>3-Color-Gradient</li></a>
+        <a href='#'><li class='nav-link'>Contact</li></a>
+        <a href='#'><li class='nav-link'>Info</li></a>
+        <a href='#'><img id='navbar-twitter-logo' src='./static/images/twitter-icon.svg' alt='The twitter logo'/></a>
+    </ul>
+</nav>
+
 
 <style>
         /* NAVBAR styles */

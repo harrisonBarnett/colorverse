@@ -1,5 +1,5 @@
 <script>
-
+    import FooterBar from './FooterBar.svelte'
     export let show
 </script>
 
@@ -19,11 +19,12 @@
     <div id='img-container'>
         <img src='./static/images/space-station.svg'/>
     </div>
+    <FooterBar />
 </main>
 
 <style>
     main {
-        padding: 80px 0;
+        padding: 100px 0 200px 0;
         position: relative;
         justify-content: space-around;
         background-image: var(--secondary-gradient);
