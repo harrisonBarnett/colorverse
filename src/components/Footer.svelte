@@ -6,7 +6,7 @@
 <main id='footer-container' style='display: {show ? 'flex' : 'none'}'>
     <div id='info-container'>
         <div id='title-1'>
-            <h1>Color Space</h1>
+            <h1>ColorVerse</h1>
             <h2>Color Palettes Generator</h2>
         </div>
         <div id='title-2'>
@@ -42,7 +42,7 @@
         color: var(--link-color);
     }
     #info-container {
-        width: 25%;
+        width: 33%;
         display: flex;
         flex-direction: column;
         gap: 1.5em;
@@ -50,7 +50,7 @@
     }
     #img-container {
         position: relative;
-        width: 33%;
+        width: 50%;
         min-width: 350px;
     }
     img {

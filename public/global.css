@@ -45,3 +45,34 @@ ul, li, a, button {
 	opacity: 1;
 	transition: all 300ms ease;
 }
+/* COLOR INPUT load in palette zone */
+#sidebar-show,
+#sidebar-hide,
+#sidenav-item-show,
+#sidenav-item-hide,
+#palette-section-input-show,
+#palette-section-input-hide {
+	transition: all 650ms ease;
+}
+#sidebar-show {
+	opacity: 1;
+}
+#sidebar-hide {
+	transform: translateX(100%);
+	opacity: 0;
+}
+#palette-section-input-hide {
+	height: 0;
+}
+#sidenav-item-hide,
+#sidenav-item-show {
+	transform-origin: top;
+}
+#sidenav-item-hide {
+	opacity: 0;
+	transform: scaleY(0);
+}
+#sidenav-item-show {
+	opacity: 1;
+	transform: scaleY(1);
+}

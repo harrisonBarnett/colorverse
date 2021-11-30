@@ -6,7 +6,7 @@
     <nav>
         <a href='#' id='nav-logo-group'>
             <img id='navbar-logo' src='./static/images/color-space-logo.png' alt='The colorspace logo'/>
-            <h1 id='navbar-styled-text'>ColorSpace</h1>
+            <h1 id='navbar-styled-text'>ColorVerse</h1>
         </a>
         <ul>
             <a href='#'><li id='current-page'>Palettes</li></a>
