@@ -6,7 +6,7 @@
         <h1 id='navbar-styled-text'>ColorVerse</h1>
     </a>
     <ul>
-        <li class='nav-link'><a href='#'>www.sunbear.online</a></li>
+        <li class='nav-link'><a href='https://www.sunbear.online' target='_blank'>www.sunbear.online</a></li>
         <li>made with <span>&hearts;</span> by harrison</li>
         <li class='nav-link'><a href='#'>Contact</a></li>
     </ul>

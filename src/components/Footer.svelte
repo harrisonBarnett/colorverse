@@ -17,7 +17,7 @@
         <p> Our collection of tools has just been released and is currently in beta. At the moment, you can generate color palettes or <a href='#'>create nice CSS gradients</a> from colors of your choice. A whole new set of different tools is currently in work. There will also be an App for Android. If you want to stay up to date, have any questions, or even suggestions, please do not hesitate to <a href='#'>contact us!</a></p>
     </div>
     <div id='img-container'>
-        <img src='./static/images/space-station.svg'/>
+        <img src='./static/images/space-station.svg' alt='a space station calmly floating in space'/>
     </div>
     <FooterBar />
 </main>
