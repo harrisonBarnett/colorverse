@@ -18,6 +18,7 @@
         <button 
             id='generate-btn'
             on:click={() => handleGenerateClick()}>
+            <img src='./static/images/rocket-icon.svg' alt='a simplified rocket ship icon'>
             generate
         </button>
     </div>
@@ -71,8 +72,15 @@
         color: white;
     }
     button {
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 300;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+    }
+    button img {
+        height: 15px;
     }
     #generate-btn {
         box-sizing: border-box;
@@ -80,6 +88,7 @@
         height: 50px;
         color: white;
         text-transform: uppercase;
+        letter-spacing: 2px;
         text-align: center;
         outline: none;
         border: none;

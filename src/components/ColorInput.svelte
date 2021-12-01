@@ -18,6 +18,7 @@
         width: 180px;
         height: 50px;
         text-transform: uppercase;
+        letter-spacing: 2px;
         text-align: center;
         outline: none;
         border: none;
