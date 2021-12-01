@@ -65,4 +65,14 @@
         50% {transform: translateY(2%)}
         100% {transform: translateY(0)}
     }
+    @media screen and (max-width: 700px) {
+        main {
+            padding-bottom: 600px;
+            flex-direction: column;
+            align-items: center;
+        }
+        #info-container {
+            width: 75%;
+        }
+    }
 </style>

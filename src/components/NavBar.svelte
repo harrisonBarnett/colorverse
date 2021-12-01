@@ -116,4 +116,12 @@
     #navbar-twitter-logo {
         height: 1em;
     }
+    @media screen and (max-width: 700px) {
+        nav ul {
+            display: none;
+        }
+        #nav-logo-group {
+            margin-right: auto;
+        }
+    }
 </style>

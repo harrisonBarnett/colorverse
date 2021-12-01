@@ -35,17 +35,20 @@
     .hero-bg-img {
         position: absolute;
         bottom: 0;
-        height: 65vh;
+        height: 65vmin;
+        min-height: 400px;
     }
     #hero-bg-right {
         right: 40px;
     }
     /* MAIN INPUTS styles */
     #input-group {
+        width: 100%;
+        max-width: 800px;
         position: absolute;
         left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+        top: 15%;
+        transform: translateX(-50%);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -90,5 +93,15 @@
         box-shadow: none;
         transition: all 500ms ease;
     }
-
+    @media screen and (max-width: 700px) {
+        #title-1 {
+            display: none;
+        }
+        #title-2 {
+            font-size: 7vmin;
+        }
+        #hero-bg-right {
+            display: none;
+        }
+    }
 </style>

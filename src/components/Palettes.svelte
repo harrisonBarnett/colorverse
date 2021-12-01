@@ -135,4 +135,24 @@
         border-radius: .5em;
         box-shadow: 1px 1px 2px rgba(0,0,0,.1);
     }
+    @media screen and (max-width: 600px) {
+        .palette-item {
+            margin: 20px auto 20px 60px;
+        }
+        .palette-item p {
+            text-align: left;
+        }
+        .palette-item:after {
+            display: none;
+        }
+        .palette-item-pair {
+            flex-direction: row;
+        }
+        .palette-item-group {
+            flex-direction: column;
+        }
+        .palette-item-hex {
+            width: 50vw;
+        }
+    }
 </style>
