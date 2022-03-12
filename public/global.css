@@ -34,6 +34,9 @@ ul, li, a, button {
 	--primary-gradient: linear-gradient(225deg, var(--color-green), var(--color-blue), var(--color-purple));
 	--secondary-gradient: linear-gradient(225deg, var(--secondary-yellow), var(--secondary-red), var(--secondary-purple));
 }
+body {
+	overflow-y: hidden;
+}
 /* PALLETE 'lazy loading' transition */
 .lazy {
 	transform: scale(0);
